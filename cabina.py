@@ -1,11 +1,11 @@
 class Cabina:
-    def __init__(self, codice, letti, ponte, prezzo_base, extra = None, disponibile = True):
+    def __init__(self, codice, letti, ponte, prezzo_base, extra = None):
         self.codice = codice
         self.letti = int(letti)
         self.ponte = int(ponte)
         self.prezzo_base = float(prezzo_base)
         self.extra = extra
-        self.disponibile = disponibile
+        self.disponibile = True
 
     def tipo(self):
         if self.extra is None:
@@ -43,6 +43,6 @@ class Cabina:
         elif self.extra.isdigit():
             descrizione = f"{base} - Max Animali: {self.extra} - {stato}"
         else:
-            descrizione = f"{base} - {stato}"
+            descrizione = f"{base} - Stile: {self.extra} - {stato}"
 
         return descrizione
